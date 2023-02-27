@@ -79,7 +79,7 @@ with st.container():
     st.write("---")
     left_column, right_column = st.columns((2,1))
     with left_column:
-        st.header("INTERNSHIPS::")
+        st.header("INTERNSHIPS:")
         #st.write("##")
         st.write(
             """
@@ -107,7 +107,7 @@ with st.container():
     st.write("---")
     left_column, right_column = st.columns((2,1))
     with left_column:
-        st.header("VOLUNTERING EXPERIENCE")
+        st.header("VOLUNTERING EXPERIENCE:")
         #st.write("##")
         st.write(
             """
@@ -128,7 +128,7 @@ with st.container():
     st.write("---")
     left_column, right_column = st.columns((2,1))
     with left_column:
-        st.header("Projects")
+        st.header("PROJECTS:")
         #st.write("##")
         st.write(
             """
