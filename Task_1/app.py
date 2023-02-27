@@ -14,11 +14,6 @@ def load_lottieurl(url):
         return None
     return r.json()
 
-
-
-with open('assets/style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
 # ---- LOAD ASSETS ----
 lottie = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_sb5rlinb.json")
 lottie_1 = load_lottieurl("https://assets4.lottiefiles.com/packages/lf20_DMgKk1.json")
