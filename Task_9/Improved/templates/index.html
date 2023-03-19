@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       #videoBG {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+        h2{
+            text-align: center;
+        }
+    </style>
+    <title>Note Taking Application</title>
+</head>
+<body>
+    <div id="videoBC">
+        <video id="videoBG" poster="{{ url_for('static', filename='poster.JPG') }}" autoplay muted loop>
+          <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
+        </video>
+      </div>
+    <!-- <video autoplay muted loop id="myVideo">
+        <source src="E:\Innomatics_internship\Tasks\Task_9\Improved\static\video.mp4" type="video/mp4">
+      </video> -->
+      
+    <div class="content">
+    <h2 >Note taking application</h2>
+    <form align = 'center' action="", method="POST">
+        <label for="">Enter a note to add: </label><br>
+        <input type="text" name="note" placeholder="Enter a note">
+        <button>Add Note</button>
+    </form>
+
+    <ul>
+        <ul>Entered Note</ul>
+    {% for note in notes%}
+        
+        <li>{{ note }}</li>
+    {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>
