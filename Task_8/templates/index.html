@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no" data-theme="dark">
+<head>
+    <title>regex101 clone: build, test and debug regex</title>
+    <style>
+#regex-app, body, html {
+    height: 100%;
+    width: 100%;
+}
+:root{
+    --code-font: "Source Code Pro",monospace;
+    --app-font: "Open Sans",Helvetica,"Lucida Sans Unicode","Lucida Grande",Arial,Verdana,sansSerif;
+    --font-size: 16px;
+}
+:root[data-theme=dark] {
+    
+    --primary-color: #1a2c42;
+    --primary-contrast-color: #6596cb;
+    --app-color: #c6c6c6;
+    --app-contrast-color: #e8e8e8;
+    --bg-0: #191919;
+    --bg-1: #1e1e1e;
+    
+    color-scheme: dark;
+}
+p{
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: initial;
+}
+.HPRlT {
+    background: var(--bg-0);
+    color: var(--app-color);
+    height: 100%;
+    width: 100%;
+}
+.Gceny.wlvok {
+    padding-right: 48px;
+}
+.Gceny.V13Sk {
+    padding-left: 48px;
+}
+
+.Gceny {
+    align-items: center;
+    background: var(--primary-color);
+    box-sizing: border-box;
+    color: var(--app-contrast-color);
+    display: flex;
+    height: 50px;
+    padding: 0 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+body,html {
+
+background-color: rgba(77,145,226,.3);
+text-align: center;
+}
+
+h1{
+ align-items: center;
+
+}
+h1.u{
+ text-align : center;
+}
+reg{
+    font-family: var(--app-font);
+    text-align: center;
+}
+
+table{
+ border:2;
+ width: 700px;
+ text-align: center;
+ font-family: var(--app-font);
+}
+table.td{
+ text-align: center;
+ font-size:var(--font-size); 
+ height: 30px ; 
+ width: 700px;
+}
+
+input{
+    text-align: center;
+    font-family: var(--app-font);
+    font-size: var(--font-size); 
+    height: 30px ;
+    width: 700px;
+}
+form{
+    text-align: center;
+}
+h3{
+ display: inline;
+}
+    </style>
+</head>
+<body>
+    <div id="regex-app">
+        <div class="HPRlT">
+           <header class="Gceny V13Sk wlvok">
+               <h1>
+                   <p class="HnB3F kKIV1 djxIS ZPud1" rel="noopener" tabindex="0" aria-label="regular expressions 101">
+                       <span class="mNcTS">Reg</span>
+                       <span class="j_FSe">Ex</span>
+                       <span class="kkc8H">101</span>
+                   </p>
+               </h1>
+           </header>
+    <h1><u>Regex101 Clone</u></h1>
+    <div class="reg">
+    <table align="center">
+    <form action="" method="post">
+        <tr>
+            <td><h3>REGULAR EXPRESSION</h3></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="in1" value="{{in1}}" placeholder="Insert your regular expression here"></td>
+        </tr>
+        <tr>
+            <td><h3>TEST STRING</h3></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="test" value="{{test}}" placeholder="Insert your test string here">
+        <br><br>
+                {% if count > 0 %}
+                <h3>Result:</h3>&nbsp;&nbsp;&nbsp;{{result}} <br><br>
+                <h3>Total matched string:</h3>&nbsp;&nbsp;&nbsp;{{count}} <br><br>
+                <h3>Positions:</h3> <br>
+                {% for lst in lsts %}
+                {{lst}}<br>
+                {% endfor %}
+                {% elif count==-1 %}
+                {{result}} <br><br>
+                {% else %}
+                <h3>Result:</h3>&nbsp;&nbsp;&nbsp; No Matches found <br><br>
+                <h3>Total matched string:</h3>&nbsp;&nbsp;&nbsp;{{count}} <br>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="SUBMIT" style="height: 50px; width:100px;"></td>
+        </tr>
+    </form>
+    </table>
+    </div>
+    </div>
+    </div>
+</body>
+
+
+</html>
