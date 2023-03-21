@@ -20,9 +20,9 @@ def regex():
             for match in re.finditer(r'{}'.format(input1),teststring):
                 string=''
                 count+=1
-                stn=stn+"Match {} \"{}\" at start and end indices [{} , {}]".format(count,match.group(),match.start(),match.end())
+                string=string+"Match {} \"{}\" at start and end indices [{} , {}]".format(count,match.group(),match.start(),match.end())
                 lst.append(string)
-            return render_template("index.html",result ="Matche found", in1=input1, test=teststring, lsts=lst, count=count)
+            return render_template("index.html",result ="Match found", in1=input1, test=teststring, lsts=lst, count=count)
 
     return render_template("index.html",count=-1)
 
