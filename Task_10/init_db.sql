@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS urls (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  longurl TEXT,
+  shorturl TEXT
+);

@@ -1,0 +1,24 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <title>URL Shortener</title>
+   </head>
+   <body>
+     <h1>URL Shortener</h1>
+     {% with messages = get_flashed_messages() %}
+       {% if messages %}
+         <ul>
+         {% for message in messages %}
+           <li>{{ message }}</li>
+         {% endfor %}
+         </ul>
+       {% endif %}
+     {% endwith %}
+     <form method="post" action="{{ url_for('shorten_url') }}">
+       <label for="long_url">Enter a long URL:</label>
+       <input type="url" id="long_url" name="long_url" required>
+       <button type="submit">Shorten URL</button>
+     </form>
+   </body>
+ </html>
+ 
