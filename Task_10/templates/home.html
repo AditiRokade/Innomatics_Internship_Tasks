@@ -2,23 +2,85 @@
  <html>
    <head>
      <title>URL Shortener</title>
+     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@500&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background: linear-gradient(225deg,hsla(211, 96%, 62%, 1) 0%,hsla(295, 94%, 76%, 1) 100%);
+        background: -moz-linear-gradient(225deg,hsla(211, 96%, 62%, 1) 0%,hsla(295, 94%, 76%, 1) 100%);
+        background: -webkit-linear-gradient(225deghsla(211, 96%, 62%, 1) 0%,hsla(295, 94%, 76%, 1) 100%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      .info {
+        font-size: 1.5rem;
+      }
+      .container{
+        position: relative;
+        height: 300px;
+        width: 400px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+      .ele {
+  position: absolute;
+  top: 50px;
+  padding: 20px;
+}
+.input {
+  width: 280px;
+  height: 30px;
+  padding-left: 10px;
+}
+.btn{
+  height: 30px;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  width: 60px;
+}
+.btn:hover {
+  cursor: pointer;
+  color: gray;
+}
+     </style>
    </head>
    <body>
-     <h1>URL Shortener</h1>
-     {% with messages = get_flashed_messages() %}
-       {% if messages %}
-         <ul>
-         {% for message in messages %}
-           <li>{{ message }}</li>
-         {% endfor %}
-         </ul>
-       {% endif %}
-     {% endwith %}
-     <form method="post" action="{{ url_for('shorten_url') }}">
-       <label for="long_url">Enter a long URL:</label>
-       <input type="url" id="long_url" name="long_url" required>
-       <button type="submit">Shorten URL</button>
-     </form>
+    <h1 class="heading">URL Shortner</h1>
+    <p class="info">Enter URL below:-</p>
+    <div class="container">
+      <div class="ele">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <form method="post" action="{{ url_for('shorten_url') }}">
+        <label for="long_url">Enter a long URL:</label>
+        <input type="url" id="long_url" name="long_url" class="input" required >
+        <button type="submit" class="btn">Shorten URL</button>
+      </form>
+      </div>
+    </div>
    </body>
  </html>
  
