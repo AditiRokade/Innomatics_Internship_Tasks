@@ -1,6 +1,7 @@
  <!DOCTYPE html>
  <html>
    <head>
+    
      <title>URL Shortener</title>
      <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@500&display=swap");
@@ -38,26 +39,26 @@
         border-radius: 10px;
       }
       .ele {
-  position: absolute;
-  top: 50px;
-  padding: 20px;
-}
-.input {
-  width: 280px;
-  height: 30px;
-  padding-left: 10px;
-}
-.btn{
-  height: 30px;
-  background-color: #1a1a1a;
-  color: white;
-  border: none;
-  width: 60px;
-}
-.btn:hover {
-  cursor: pointer;
-  color: gray;
-}
+        position: absolute;
+        top: 50px;
+        padding: 20px
+      }
+      .input {
+        width: 280px;
+        height: 30px;
+        padding-left: 10px;
+      }
+      .btn{
+        height: 30px;
+        background-color: #1a1a1a;
+        color: white;
+        border: none;
+        width: 60px;
+      }
+      .btn:hover {
+        cursor: pointer;
+        color: gray;
+      }
      </style>
    </head>
    <body>
@@ -76,9 +77,10 @@
       {% endwith %}
       <form method="post" action="{{ url_for('shorten_url') }}">
         <label for="long_url">Enter a long URL:</label>
-        <input type="url" id="long_url" name="long_url" class="input" required >
-        <button type="submit" class="btn">Shorten URL</button>
+        <input type="url" id="long_url" name="long_url" class="input" placeholder="URL" required >
+        <button type="submit" class="btn">Shorten</button>
       </form>
+      
       </div>
     </div>
    </body>
